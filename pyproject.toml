@@ -1,0 +1,31 @@
+[project]
+name = "uuid7-standard"
+version = "1.0.0"
+description = "UUIDv7 with the final standard. Not to be confused with the uuid7 package on pypi, based on a draft version that was very different."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+authors = [
+    {name = "Leo Vasanko"},
+]
+keywords = ["uuid", "uuid7", "timestamp", "ordering", "database", "primary-key"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "License :: Public Domain",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://git.zi.fi/leo/uuid7-python"
+Repository = "https://github.com/LeoVasanko/uuid7-python"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["uuid7.py"]
