@@ -1,3 +1,4 @@
+from __future__ import annotations
 from datetime import datetime
 from datetime import timezone as _tz
 from secrets import token_bytes as _token_bytes
@@ -28,7 +29,7 @@ def time(u: UUID | str) -> datetime:
     """
     if not isinstance(u, UUID):
         u = UUID(u)
-    if u.version != 7:
+    if u.version != 7 or u.variant != "specified in RFC 4122":
         raise ValueError("Not a UUIDv7")
     ts = int.from_bytes(u.bytes[:6], "big")
     return datetime.fromtimestamp(ts / 1000, tz=_tz.utc)

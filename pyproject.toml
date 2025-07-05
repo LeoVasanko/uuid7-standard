@@ -1,9 +1,9 @@
 [project]
 name = "uuid7-standard"
-version = "1.0.0"
+version = "1.1.0"
 description = "UUIDv7 with the final standard. Not to be confused with the uuid7 package on pypi, based on a draft version that was very different."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.8"
 dependencies = []
 authors = [
     {name = "Leo Vasanko"},
@@ -20,8 +20,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://git.zi.fi/leo/uuid7-python"
-Repository = "https://github.com/LeoVasanko/uuid7-python"
+Homepage = "https://git.zi.fi/LeoVasanko/uuid7-standard"
+Repository = "https://github.com/LeoVasanko/uuid7-standard"
 
 [build-system]
 requires = ["hatchling"]
