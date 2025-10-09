@@ -11,10 +11,10 @@ def create(when: datetime | None = None) -> UUID:
     """Create a UUIDv7 with timestamp-based ordering.
 
     Args:
-        when: Timestamp to use. Defaults to current time.
+        when: Timestamp to use. Defaults to current UTC time.
     """
     if when is None:
-        when = datetime.now()
+        when = datetime.now(_tz.utc)
     ts = int(when.timestamp() * 1000).to_bytes(6, "big")
     rand = bytearray(_token_bytes(10))
     rand[0] = (rand[0] & 0x0F) | 0x70
