@@ -45,8 +45,28 @@ timestamp = uuid7.time(u)  # 1970-01-01 UTC
 
 Create a UUIDv7 with timestamp-based ordering.
 
-The current time is used, unless `when` is passed as datetime (local time or timezone-aware) This is useful e.g. for creating a bunch of UUIDv7 with precisely the same timestamp.
+**Parameters:**
+- `when`: Optional datetime object. Defaults to current UTC time if not provided.
+  - Must be a `datetime` instance (timezone-aware or naive)
+  - Must be >= Unix epoch (1970-01-01 00:00:00 UTC)
+  - Must be < year 10889 (48-bit timestamp limit)
+
+**Returns:** A `UUID` instance with version 7 and RFC 4122 variant.
+
+**Raises:**
+- `TypeError`: If `when` is not a datetime object or None
+- `ValueError`: If timestamp is before Unix epoch or exceeds 48-bit limit
+
+**Note:** This is useful for creating multiple UUIDs with precisely the same timestamp.
 
 ### `time(u: UUID|str) -> datetime`
 
-Extract the timestamp from a UUIDv7. Raises ValueError if the UUID is not a UUIDv7.
+Extract the timestamp from a UUIDv7.
+
+**Parameters:**
+- `u`: A UUIDv7 instance or string representation
+
+**Returns:** A timezone-aware `datetime` object in UTC.
+
+**Raises:**
+- `ValueError`: If the UUID is not a valid UUIDv7 (wrong version or variant)

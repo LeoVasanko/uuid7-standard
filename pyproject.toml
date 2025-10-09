@@ -1,6 +1,6 @@
 [project]
 name = "uuid7-standard"
-version = "1.1.0"
+version = "1.1.1"
 description = "UUIDv7 with the final standard. Not to be confused with the uuid7 package on pypi, based on a draft version that was very different."
 readme = "README.md"
 requires-python = ">=3.8"
