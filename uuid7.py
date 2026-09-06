@@ -4,7 +4,7 @@ from datetime import timezone as _tz
 from secrets import token_bytes as _token_bytes
 from uuid import UUID
 
-__all__ = ["create", "time"]
+__all__ = ["UUID", "create", "time"]
 
 
 def create(when: datetime | None = None) -> UUID:
